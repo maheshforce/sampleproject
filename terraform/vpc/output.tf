@@ -1,7 +1,7 @@
 output "vpc_details" {
   value = {
-    public_subnets   = aws_subnet.public_subnets[*].id
-    private_subnets  = aws_subnet.private_subnets[*].id
+    vpc_id      = module.vpc.vpc_id
+    public_subnets   = module.vpc.public_subnets
   }
   description = "Details of the created VPC and its associated resources"
 }
